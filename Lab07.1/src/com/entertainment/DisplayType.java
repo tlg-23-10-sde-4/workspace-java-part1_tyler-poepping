@@ -1,6 +1,6 @@
 package com.entertainment;
 
-enum DisplayType {
+public enum DisplayType {
     LED,
     OLED,
     PLASMA,
