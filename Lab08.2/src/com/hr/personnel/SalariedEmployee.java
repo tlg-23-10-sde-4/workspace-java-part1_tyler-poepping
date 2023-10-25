@@ -13,6 +13,10 @@ public class SalariedEmployee extends Employee {
         setSalary(salary);
     }
 
+    // Business Methods
+    public void pay() {
+        System.out.println(super.getName() + " is paid salary  of " + getSalary());
+    }
 
     // Getters and Setters
     public double getSalary() {
@@ -26,10 +30,6 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "SalariedEmployee{" +
-                "Name=" + getName() +
-                "HiredDate=" + getHireDate() +
-                "salary=" + salary +
-                '}';
+        return super.toString() + " salary= " + getSalary();
     }
 }

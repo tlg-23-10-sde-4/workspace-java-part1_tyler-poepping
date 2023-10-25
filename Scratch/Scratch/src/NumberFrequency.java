@@ -11,16 +11,16 @@ public class NumberFrequency {
     }
 
     public static void numberFrequency() {
-        Integer[] intArray = new Integer[MAX]; // Array size should cover the range [MIN, MAX]
+        Integer[] intArray = new Integer[MAX + 1]; // Array size should cover the range [MIN, MAX]
 
         for (int i = 0; i < 1000; i++) {
             Integer randomInt = getRandomInt(MIN, MAX);
-            intArray[randomInt] = intArray[randomInt] == null ? 1 : intArray[randomInt - MIN] + 1;
+            intArray[randomInt] = intArray[randomInt] == null ? 1 : intArray[randomInt] + 1;
         }
 
-        for (int i = 0; i < intArray.length; i++) {
+        for (int i = MIN; i <= MAX; i++) {
             if (intArray[i] != null) {
-                System.out.println((i + MIN) + " was called " + intArray[i] + " times");
+                System.out.println(i + " was called " + intArray[i] + " times");
             }
         }
     }

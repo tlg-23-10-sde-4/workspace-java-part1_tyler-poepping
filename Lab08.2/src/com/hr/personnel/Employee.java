@@ -20,8 +20,11 @@ import java.time.LocalDate;
  * Methods (excluding get/set methods):
  *   void work()        simulates work by printing a message to show it was called.
  *   String toString()  self-explanatory.
+ *
+ *   By making the class abstract, we literally force it to use its child classes
+ *   We also force it to be a full instance, so it must include the child class attributes on creation
  */
-public class Employee {
+public abstract class Employee {
     // fields
     private String name;
     private LocalDate hireDate;
@@ -39,6 +42,8 @@ public class Employee {
     public void work() {
         System.out.println(getName() + " working hard since " + getHireDate());
     }
+
+    public abstract void pay(); // by using abstract, we delegate down to the child classes
 
     // accessor methods
     public String getName() {
@@ -59,6 +64,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee: name=" + getName() + ", hireDate=" + getHireDate();
+        return getClass().getSimpleName() + " name = " + getName() + ", hireDate=" + getHireDate();
     }
+
+
 }

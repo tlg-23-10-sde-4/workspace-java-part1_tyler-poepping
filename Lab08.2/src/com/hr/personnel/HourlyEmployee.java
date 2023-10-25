@@ -15,6 +15,11 @@ public class HourlyEmployee extends Employee{
         setHours(hours);
     }
 
+    // Business methods
+    public void pay() {
+        System.out.println(super.getName() + " is paid hourly " + (getRate() * getHours()));
+    }
+
     // Getters and Setters
     public double getRate() {
         return rate;
@@ -35,11 +40,6 @@ public class HourlyEmployee extends Employee{
 
     @Override
     public String toString() {
-        return "HourlyEmployee{" +
-                "Name=" + getName() +
-                "HiredDate=" + getHireDate() +
-                "rate=" + rate +
-                ", hours=" + hours +
-                '}';
+        return super.toString() + " hours = " + getHours() + " rate = " + getRate();
     }
 }
