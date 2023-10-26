@@ -17,15 +17,18 @@ public class Television {
     // Constructors
     public Television() {}
 
-    public Television(String brand, Integer volume, boolean muted, int savedVolume, DisplayType display)
-    throws IllegalArgumentException, InvalidBrandException {
+    public Television(String brand, Integer volume, DisplayType display) throws InvalidBrandException {
+        setBrand(brand);
+        setVolume(volume);
+        setDisplay(display);
+    }
+
+    public Television(String brand, Integer volume, boolean muted, int savedVolume, DisplayType display) throws InvalidBrandException {
+        this(brand,volume,display);
         instanceCount++;
         this.id = nextId++;
-        this.brand = brand;
-        this.volume = volume;
         this.muted = muted;
         this.savedVolume = savedVolume;
-        this.display = display;
     }
 
     // METHODS
