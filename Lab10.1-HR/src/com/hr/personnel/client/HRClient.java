@@ -20,7 +20,7 @@ import java.time.LocalDate;
  */
 class HRClient {
 
-    public static void main(String[] args) throws IllegalWageException {
+    public static void main(String[] args) {
         // create Department object
         Department dept = new Department("Sales", "Seattle");
         System.out.println(dept);
@@ -34,7 +34,6 @@ class HRClient {
         } catch (IllegalWageException ex) {
             System.out.println("Error: " + ex);
         }
-
 
         // list its Employees
         System.out.println("\nList employees:");

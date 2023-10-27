@@ -17,11 +17,14 @@ public class TelevisionClientArgs {
         String brand = null;
         Integer vol = 0;
         DisplayType display = null;
+
+
+
         try {
             brand = args[0];
             vol = Integer.parseInt(args[1]);
             display = DisplayType.valueOf(args[2]);
-        } catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) { // WHAT TO DO IF THIS SPECIFIC ERROR <- IllegalArgumentException
             System.out.println("TVClientArgs Error: " + e);
             printUsage();
         }
@@ -29,7 +32,7 @@ public class TelevisionClientArgs {
         try {
             Television tv = new Television(brand, vol, display);
             System.out.println(tv);
-        } catch (Exception ex) {
+        } catch (Exception ex) { // <- WHAT TO DO IF BROKE FOR EVERYTHING NOT JUST IllegalArgs
             System.out.println(ex);
             printUsage();
         }
